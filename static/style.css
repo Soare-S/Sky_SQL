@@ -1,0 +1,132 @@
+/* Reset some default styles for consistency */
+body, h1, h2, h4, form {
+  margin: 2px;
+  padding: 0;
+  background-color: #3d405b;
+}
+
+h1, h4 {
+    color: #f2cc8f;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Style the h1 heading */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style the h2 headings */
+h2 {
+  margin-top: 30px;
+  color: #f4f1de;
+}
+
+/* Style the forms */
+form {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f2cc8f;
+}
+
+/* Style the input fields */
+input[type="text"] {
+  padding: 5px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+/* Style the submit buttons */
+input[type="submit"] {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Increase the spacing between form elements */
+form + form {
+  margin-top: 30px;
+}
+
+/* Create a grid layout for forms to make them flexible */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.flight-id,
+.flight-date,
+.flights-map,
+.delayed-airline,
+.delayed-airport,
+.results {
+    border: 1px solid #ddd;
+    background-color: #81b29a;
+    padding: 2px;
+    margin: 2px;
+}
+
+/* Style the submit buttons */
+input[type="submit"] {
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: #e07a5f;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #81b29a;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 2px;
+    top: 5px;
+    width: 98%;
+    color: #f4f1de;
+    border: 2px solid;
+    border-top-color: #3d405b;
+    border-right-color: #3d405b;
+    border-bottom-color: white;
+    border-left-color: #3d405b;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    background-color: #81b29a;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse; /* Collapse borders to create a single border */
+    width: 100%; /* Set the table width to 100% of its container */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Add a 1px solid border to each cell */
+    padding: 8px; /* Add some padding to the cells for spacing */
+    text-align: left; /* Align text to the left in cells */
+}
+
+th {
+    background-color: #f2f2f2; /* Set a background color for header cells */
+}
+
+.error {
+    color: #3d405b;
+    background-color: #f4f1de;
+    text-align: center;
+}

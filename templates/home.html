@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Data App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+        <h1>Flight Data App</h1>
+</header>
+<p class="error">{{ error }}</p>
+<div class="form-grid">
+    <div class="delayed-airline">
+    <h2>Delayed Flights by Airline</h2>
+    <form action="/api/delayed_flights_by_airline" method="GET">
+        Airline: <input type="text" name="airline" placeholder="Enter airline name">
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <div class="delayed-airport">
+    <h2>Delayed Flights by Airport</h2>
+    <form action="/api/delayed_flights_by_airport" method="GET">
+        Airport: <input type="text" name="airport" placeholder="Enter airport name">
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <div class="flight-id">
+    <h2>Flight by ID</h2>
+    <form action="/api/flight_by_id" method="GET">
+        Flight ID: <input type="text" name="flight_id" placeholder="Enter flight ID">
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <div class="flight-date">
+    <h2>Flights by Date</h2>
+    <form action="/api/flights_by_date" method="GET">
+         <label for="date">Enter date:</label>
+        <input type="text" id="date" name="date" pattern="\d{2}/\d{2}/\d{4}" title="Enter a date in DD/MM/YYYY format" maxlength="10" placeholder="__/__/____">
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <div class="flights-map">
+    <h2>Percentage Delayed Flights on Map</h2>
+    <form action="/api/percentage_delayed_flights_on_map" method="GET">
+        <!-- Link to the flight_map.html template -->
+        <input type="submit" value="Show map">
+    </form>
+    </div>
+</div>
+<div class="results"><table id="resultsTable">
+    <h4>Note: After fetching results, use Ctr + F to find desired result!</h4>
+        <tr>
+            <th>AIRLINE</th>
+            <th>FLIGHT ID</th>
+            <th>DELAY</th>
+            <th>ORIGIN AIRPORT</th>
+            <th>DESTINATION AIRPORT</th>
+        </tr>
+        {% for flight in results %}
+        <tr>
+            <td>{{ flight['AIRLINE'] }}</td>
+            <td>{{ flight['FLIGHT_ID'] }}</td>
+            <td>{{ flight['DELAY'] }}</td>
+            <td>{{ flight['ORIGIN_AIRPORT'] }}</td>
+            <td>{{ flight['DESTINATION_AIRPORT'] }}</td>
+        </tr>
+        {% endfor %}
+    </table></div>
+ <div class="footer">
+        <p class="footer">Created for our SQL Sky Project | ©2023, by Sorin Slesari</p>
+ </div>
+<script src="script.js"></script>
+</body>
+</html>
